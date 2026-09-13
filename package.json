@@ -2,7 +2,10 @@
   "name": "googledemocicd",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:google": "playwright test tests/firsttest.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,4 +14,5 @@
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.4.1"
   }
+  
 }
