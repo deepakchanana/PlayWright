@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm ci'
+                bat 'npx playwright install'
+            }
+        }
+
+        stage('Run Tests in Parallel') {
+            parallel {
+
+                stage('Script 1') {
+                    steps {
+                        bat 'npx playwright test tests/script1.spec.js'
+                    }
+                }
+
+                stage('Script 2') {
+                    steps {
+                        bat 'npx playwright test tests/script2.spec.js'
+                    }
+                }
+            }
+        }
+    }
+}
