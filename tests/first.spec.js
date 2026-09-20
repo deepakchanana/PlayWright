@@ -1,3 +1,5 @@
+const { test, expect } = require('@playwright/test');
+
 test('Google Test', async ({ page }) => {
     await page.goto('https://www.google.com');
 
